@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" type="text/css" media="screen" href="reset.css" /-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="Psychic.css" />
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+
+    <style>
+
+        body{
+            height:100%;
+        }
+        header h4{
+            font-family: 'Gugi', cursive;
+        }
+        .container-fluid{
+            max-width:900px;
+        }
+
+        #wrap {
+            min-height:100%;
+            height: auto !important;
+            height:100%;
+            margin: 0 auto -60px;
+        }
+
+        .footer {
+            position:relative;
+            bottom:0;
+        }
+
+        #push,
+        #footer {
+            height: 60px;
+        }
+
+    </style>
+</head>
+<body class="bg-light">
+
+<div id="wrap">
+    
+<header class="jumbotron text-center bg-dark mb-0">
+    <h6 class="text-danger"><span id="nameTag">"Psychic Game" by Alex Bruner</span></h6>
+    <h1 class="text-white"><span id="messageMain">Type Your Guess to Begin...</span></h1>
+    <h4 class="text-danger"><span id="messageSub"></span></h4>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 mt-3">
+            <div class="card p-3">
+                <h2 class = "border-bottom border-dark">You Guessed: <span class="text-danger" id="userGuess"></span></p>
+                <h3>Guesses Left: <span class="text-danger" id ="remainingGuesses"></span></h3>
+                <h3>You have tried: <span class="text-danger" id ="prevGuesses"></span></h3>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 mt-3">
+            <div class="card p-3">
+                <h3>Wins: <span class="text-danger" id ="wins"></span></h3>
+                <h3>Losses:<span class="text-danger" id ="losses"></span></h3>
+            </div>
+        </div>
+    </div>
+    <div id="push"></div>
+</div>
+
+</div>
+<footer class="footer bg-dark text-center pt-3 pb-3 mt-3">
+    <div class="container">
+        <button class="btn-lg bg-danger text-white" i="reset">Reset This Test</button>
+    </div>            
+</footer>
+
+
+    <script src="Psychic.js"></script>
+</body>
+    
+</html>
