@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 
 </head>
-<body class="bg-light">
+<body>
 
 <div id="wrap">
     
@@ -28,8 +28,8 @@
         <div class="col-sm-12 col-md-8 mt-3">
             <div class="card p-3">
                 <h2 class = "border-bottom border-dark">You Guessed: <span class="text-danger" id="userGuess"></span></p>
-                <h3>Guesses Left: <span class="text-danger" id ="remainingGuesses"></span></h3>
-                <h3>You have tried: <span class="text-danger" id ="prevGuesses"></span></h3>
+                <h3>Guesses Left: <span id ="remainingGuesses"></span></h3>
+                <h3>You have tried: <span id ="prevGuesses"></span></h3>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 mt-3">
@@ -39,17 +39,21 @@
             </div>
         </div>
     </div>
-    <div id="push"></div>
 </div>
+
+<br>
+
+<div id="push"></div>
 
 </div>
 <footer class="footer bg-dark text-center pt-3 pb-3 mt-3">
     <div class="container">
-        <button class="btn-lg bg-danger text-white" i="reset">Reset This Test</button>
+        <button class="btn-lg bg-danger text-white" id="reset" value="Input Button" onclick="location.href = 'index.html';">Refresh Page</button>
     </div>            
 </footer>
 
 
+</script>
     <script src="Psychic.js"></script>
 </body>
     

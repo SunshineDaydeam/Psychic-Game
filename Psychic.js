@@ -9,15 +9,15 @@ var randLetter = possibleLetters[Math.floor(Math.random() * possibleLetters.leng
 var wins = 0;
 var losses = 0;
 
-//message variables
+//header message variables
 
 var nameTag = '"Psychic Game" by Alex Bruner';
 var mainMessage = "I'm Thinking of a Letter...";
-var lossMessage = "Sorry, You Are Not Psychic";
+var lossMessage = "Sorry, the letter was " + '"' + randLetter.toUpperCase() + '"';
 var winMessage = "You Might Be Psychic!";
 
 var mainMessageSub = "The Psychic Game";
-var lossMessageSub = "Try Again";
+var lossMessageSub = "You are probably not psychic. But please try again";
 var winMessageSub = "Can you guess it right again?";
 
 //remaining and previous guess variables
@@ -27,17 +27,22 @@ var prevGuesses = [];
 //user guess variable
 var userGuess = null;
 
+console.log(randLetter);
+
 //when key is released run the game
 document.onkeyup = function(event) {
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase(); //convert letter to lowercase
   document.querySelector("#messageMain").innerHTML = mainMessage;  //display main message across screen
   document.querySelector("#messageSub").innerHTML = mainMessageSub;  //display main message across screen
   document.querySelector("#nameTag").innerHTML = "";
- 
+  
+ //if userGuess is a valid entry( and hasn't been guess before)
   if (prevGuesses.indexOf(userGuess) < 0 && possibleLetters.indexOf(userGuess) >=0) {
     prevGuesses[prevGuesses.length]=userGuess;
+    //Remaining guesses minu 1
     remainingGuesses--;
-    document.querySelector("#userGuess").innerHTML = "&nbsp;" + userGuess;
+    //Display userGuess on Screen
+    document.querySelector("#userGuess").innerHTML = "&nbsp;"+ "&nbsp;" + '"' + userGuess.toUpperCase() + '"';
   }
 
   if (randLetter == userGuess) {
@@ -47,7 +52,8 @@ document.onkeyup = function(event) {
     remainingGuesses = 10 //reset remaining guesses to 10
     prevGuesses = []; //reset previous guesses
     randLetter = possibleLetters[Math.floor(Math.random() * possibleLetters.length)]; //generate a new random letter
-    console.log("You are either lucky, a psychic, or a cheater. Shame.")
+    
+    console.log(randLetter);
   }
 
   if (remainingGuesses == 0) {
@@ -57,7 +63,8 @@ document.onkeyup = function(event) {
     remainingGuesses = 10; //reset remaining guesses to 10
     prevGuesses = []; //reset previous guesses
     randLetter = possibleLetters[Math.floor(Math.random() * possibleLetters.length)]; //generate a new random letter
-    console.log("Don't feel too bad, psychics aren't even real.")
+    
+    console.log(randLetter);
   }
 
   //write Previous Guesses to html
@@ -68,9 +75,8 @@ document.onkeyup = function(event) {
   document.querySelector("#wins").innerHTML = "&nbsp;" + wins;
   //write Losses to html
   document.querySelector("#losses").innerHTML = "&nbsp;" + losses;
-
-  //reset button - testing -
-  
 }
+  //reset button - testing
+
 
     
